@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+    - name: sales
+      database: SALES_DB
+      schema: RAW
+      tables:
+        - name: SALES
+    
+    - name: crm
+      database: CRM_DB
+      schema: RAW
+      tables:
+        - name: CRM
+        
+    - name: marketing
+      database: MARKETING_DB
+      schema: RAW
+      tables:
+        - name: MARKETING
