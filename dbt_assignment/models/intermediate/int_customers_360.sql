@@ -1,6 +1,6 @@
 SELECT 
     C.customer_id,
-    C.income_band,
+    C.income_segment,
     C.customer_segment,
 
     S.TOTAL_ORDERS,
@@ -13,12 +13,12 @@ SELECT
 FROM
     {{ref('stg_customers_segment')}} C 
 
-JOIN 
+LEFT JOIN 
     {{ref ('int_cust_sales_profile')}} S 
 ON
-    C.customer_id = S.customer_id
+    C.customer_match_key = S.customer_match_key
 
-JOIN
+LEFT JOIN
     {{ref ('int_customer_marketing_profile')}} M
 ON 
-    M.customer_id = S.customer_id
+    C.customer_match_key = M.customer_match_key

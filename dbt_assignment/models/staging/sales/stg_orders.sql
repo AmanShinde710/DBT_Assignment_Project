@@ -4,10 +4,12 @@ WITH orders AS (
     SELECT
         INVOICE AS order_id,
         COALESCE(CUSTOMERID, 0000) AS customer_id,
+        customer_match_key,
         INVOICEDATE AS order_date,
         STOCKCODE AS product_id,
         QUANTITY AS quantity,
-        PRICE AS price
+        PRICE AS price,
+        QUANTITY * PRICE AS ORDER_AMOUNT
     FROM 
         {{ source('sales','SALES')}}
     WHERE

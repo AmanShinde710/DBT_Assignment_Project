@@ -6,13 +6,15 @@ WITH order_summary AS (
     SELECT
         ORDER_ID,
         CUSTOMER_ID,
+        customer_match_key,
         COUNT(DISTINCT QUANTITY) AS total_quantity,
         SUM(QUANTITY * PRICE) AS total_order_value
 
     FROM {{ ref('stg_orders') }}
     GROUP BY 
         ORDER_ID,
-        CUSTOMER_ID
+        CUSTOMER_ID,
+        customer_match_key
     ORDER BY
         TOTAL_ORDER_VALUE DESC
 

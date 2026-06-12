@@ -35,17 +35,16 @@ models:
     staging:
       
       sales:
-        +database: SALES
+        +database: SALES_DB
         +schema: STAGING
         +materialized: view
       
       crm:
-        +database: CRM
+        +database: CRM_DB
         +schema: STAGING
         +materialized: view
       
       marketing:
-        +database: MARKETING
+        +database: MARKETING_DB
         +schema: STAGING
         +materialized: view
-

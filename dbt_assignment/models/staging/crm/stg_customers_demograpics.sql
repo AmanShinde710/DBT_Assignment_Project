@@ -3,6 +3,7 @@
 WITH customer_demographics AS (
     SELECT
         ID AS customer_id,
+        customer_match_key,
         YEAR(CURRENT_DATE) -  YEAR_BIRTH AS age,
         KIDHOME,
         TEENHOME
