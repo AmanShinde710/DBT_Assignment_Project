@@ -48,3 +48,11 @@ models:
         +database: MARKETING_DB
         +schema: STAGING
         +materialized: view
+    
+    intermediate:
+      +database: ANALYTICS_DB
+      +materialized: view
+
+    mart:
+      +database: ANALYTICS_DB
+      +materialized: table

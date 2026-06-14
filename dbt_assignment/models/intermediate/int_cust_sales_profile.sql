@@ -5,16 +5,16 @@
 
 WITH customer_sales_profile AS (
     SELECT
-        O.CUSTOMER_ID AS customer_id,
+        CUSTOMER_ID AS customer_id,
         customer_match_key,
-        MIN(O.ORDER_DATE) AS first_order_date,
-        MAX(O.ORDER_DATE) AS last_order_date,
-        COUNT(DISTINCT O.ORDER_ID) AS total_orders,
-        SUM(O.ORDER_AMOUNT) AS total_revenue
+        MIN(ORDER_DATE) AS first_order_date,
+        MAX(ORDER_DATE) AS last_order_date,
+        COUNT(DISTINCT ORDER_ID) AS total_orders,
+        SUM(ORDER_AMOUNT) AS total_revenue
     FROM
-        {{ ref("stg_orders")}} O
+        {{ ref("stg_orders")}}
     GROUP BY
-        O.CUSTOMER_ID,
+        CUSTOMER_ID,
         customer_match_key
 )
 

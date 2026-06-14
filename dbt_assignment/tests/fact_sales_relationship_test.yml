@@ -1,0 +1,13 @@
+models:
+    - name: fact_sales
+      columns: 
+        - name: customer_match_key
+          data_tests:
+            - relationships:
+                arguments:
+                    to: ref("dim_customers")
+                    field: customer_match_key
+
+        - name: revenue
+          data_tests:
+           - validate_revenue

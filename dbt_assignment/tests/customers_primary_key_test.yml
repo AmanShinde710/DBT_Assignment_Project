@@ -1,0 +1,13 @@
+models:
+    - name: dim_customers
+      columns:
+        - name: customer_id
+          data_tests:
+            - unique
+            - not_null
+        - name: customer_match_key
+          data_tests: 
+            - unique
+            - not_null
+
+    

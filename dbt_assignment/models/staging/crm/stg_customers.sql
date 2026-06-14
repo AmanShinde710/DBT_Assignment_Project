@@ -5,7 +5,7 @@ WITH customers AS (
         ID AS customer_id,
         customer_match_key,
         EDUCATION AS education,
-        DT_CUSTOMER AS enrollment_date,
+        TO_DATE(dt_customer,'DD-MM-YYYY') AS enrollment_date,
         MARITAL_STATUS,
         INCOME
 

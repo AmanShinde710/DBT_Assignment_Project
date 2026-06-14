@@ -1,0 +1,8 @@
+models:
+    - name: stg_capaign_response
+      columns:
+        - name: response_flag
+          data_tests:
+            - accepted_values:
+                arguments:
+                    values: [0,1]
